@@ -1,0 +1,17 @@
+<div class="container mt-5 text-center">
+  <h2 class="mb-4">Lista de Tareas</h2>
+
+  <ul class="list-group w-50 mx-auto">
+    @for (product of productos; track product) {
+    <li class="list-group-item">{{ product.nombre }}, ${{product.precio}}</li>
+    }
+  </ul>
+  <h2>Agregar Producto</h2>
+  <div class="d-flex justify-content-center mt-3 w-50 mx-auto">
+    <input type="text" placeholder="Nombre del producto" [(ngModel)]="nuevoProducto" class="form-control w-50 me-2"
+      style="width: 60%;" />
+    <input type="number" placeholder="Precio" [(ngModel)]="nuevoPrecio" class="form-control me-2" style="width: 20%;" />
+    <button (click)="agregarProducto(nuevoProducto, nuevoPrecio)" class="btn btn-primary" style="width: 20%;">
+      Agregar
+    </button>
+  </div>
